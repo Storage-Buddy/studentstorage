@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Columbia University Student Storage Match - Affordable Storage for Columbia Students</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .intro h2 {
+            color: #1e3a8a;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        .intro p {
+            font-size: 1.1em;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .how-it-works {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        .how-it-works h3 {
+            color: #1e3a8a;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .step {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .step h4 {
+            color: #1e3a8a;
+            margin-bottom: 8px;
+        }
+
+        .step p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .pricing-info {
+            background: #f0fdf4;
+            border: 2px solid #4ade80;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .pricing-info h4 {
+            color: #166534;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .pricing-info p {
+            color: #15803d;
+            font-size: 1.05em;
+        }
+
+        .restrictions {
+            background: #fef3c7;
+            border: 1px solid #d97706;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .restrictions h4 {
+            color: #92400e;
+            margin-bottom: 10px;
+        }
+
+        .restrictions ul {
+            margin-left: 20px;
+            color: #78350f;
+        }
+
+        .restrictions li {
+            margin-bottom: 5px;
+        }
+
+        .cta-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .cta-card {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .cta-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .cta-card h3 {
+            color: #1e3a8a;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .cta-card p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            font-size: 1.1em;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.4);
+        }
+
+        .footer {
+            background: #f8fafc;
+            padding: 20px 30px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .header p {
+                font-size: 1em;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Columbia University Student Storage Match</h1>
+            <p>Affordable, convenient storage for students, by students</p>
+        </div>
+
+        <div class="content">
+            <div class="intro">
+                <h2>Connect with Fellow Students</h2>
+                <p>We match students who need storage with students who have extra space. Safe, affordable, and convenient peer-to-peer storage solutions.</p>
+            </div>
+
+            <div class="how-it-works">
+                <h3>How It Works</h3>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div style="font-size: 2.5em; margin-bottom: 10px;">📝</div>
+                        <h4>Sign Up</h4>
+                        <p>Tell us what you need (storage) or what you have (space to offer)</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div style="font-size: 2.5em; margin-bottom: 10px;">✅</div>
+                        <h4>We Verify Students</h4>
+                        <p>We check UNI credentials to ensure both hosts and seekers are verified Columbia students</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div style="font-size: 2.5em; margin-bottom: 10px;">🤝</div>
+                        <h4>We Match You</h4>
+                        <p>We'll connect you with a compatible student host or storage seeker</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div style="font-size: 2.5em; margin-bottom: 10px;">💬</div>
+                        <h4>You Arrange Details</h4>
+                        <p>Coordinate directly with your match on drop-off, pricing, and payment (typically via Venmo)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pricing-info">
+                <h4>💰 Typical Pricing</h4>
+                <p>$15-$35 per bag or box per month (negotiable with your host based on your needs)</p>
+            </div>
+
+            <div class="cta-section">
+                <div class="cta-card">
+                    <h3>Need Storage?</h3>
+                    <p>Going abroad? Summer break? Or just looking to put a bicycle away for a few weeks or months? We'll match you with a student who has space available.</p>
+                    <!-- REPLACE THIS URL WITH YOUR GOOGLE FORM FOR STORAGE SEEKERS -->
+                    <a href="YOUR_STORAGE_SEEKER_FORM_URL_HERE" class="btn btn-primary">Find Storage</a>
+                </div>
+
+                <div class="cta-card">
+                    <h3>Have Extra Space?</h3>
+                    <p>Earn money by hosting items for fellow Columbia students in your spare space.</p>
+                    <!-- REPLACE THIS URL WITH YOUR GOOGLE FORM FOR HOSTS -->
+                    <a href="YOUR_HOST_FORM_URL_HERE" class="btn btn-secondary">Become a Host</a>
+                </div>
+            </div>
+
+            <div class="restrictions">
+                <h4>⚠️ Items That Cannot Be Stored</h4>
+                <ul>
+                    <li>Perishable food or beverages</li>
+                    <li>Hazardous materials or chemicals</li>
+                    <li>Weapons or ammunition</li>
+                    <li>Illegal substances or items</li>
+                    <li>Live animals or plants</li>
+                    <li>Flammable or explosive materials</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Important:</strong> Columbia University Student Storage Match is a matching platform only. We connect students but are not party to storage agreements. All transactions, arrangements, and agreements are directly between students. Users must be 18+ or have parental consent.</p>
+            <p>Questions? Contact us at [YOUR_EMAIL_HERE]</p>
+        </div>
+    </div>
+</body>
+</html>
